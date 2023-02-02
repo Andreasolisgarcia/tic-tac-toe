@@ -1,4 +1,4 @@
-require_relative 'player.rb'
+require_relative 'Player'
 class Game
 
     def initialize
