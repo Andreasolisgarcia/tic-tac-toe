@@ -37,15 +37,14 @@ puts "Board to be alive !"
 board = Board.new
 board.show_board
 
-while  board.cases.include? " "
+while  board.hash_cases.values.include? " "
     board.player_choise(player1)
     board.show_board
     board.player_choise(player2)
     board.show_board
 end
 
-
-binding.pry
+#binding.pry
 
 
 
