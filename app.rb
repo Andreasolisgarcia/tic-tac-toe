@@ -25,7 +25,7 @@ name2 = gets.chomp
 puts 'Choisis "X" ou "O"'
 sign2 = gets.chomp
 
-while sign2 != "O" && sign2 != "X"
+while sign2 != "O" && sign2 != "X" && sign2 != sign1
     puts 'Malin toi !, cest "X" ou "O"'
     sign1 = gets.chomp
 end
