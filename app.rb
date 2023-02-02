@@ -1,7 +1,7 @@
 require 'bundler'
-# Bundler.require
-#require 'pry'
 
+#Bundler.require
+require 'pry'
 
 require_relative 'lib/Game'
 require_relative 'lib/Player'
@@ -14,11 +14,12 @@ name1 = gets.chomp
 
 puts 'Choisis "X" ou "O"'
 print "> "
-sign1 = gets.chomp
+sign1 = gets.chomp.capitalize
+
                                       
 while sign1 != "O" && sign1 != "X"
     puts 'Malin toi !, cest "X" ou "O"'
-    sign1 = gets.chomp
+    sign1 = gets.chomp.capitalize
 end
 # puts sign1
 
@@ -27,11 +28,13 @@ puts "Joueur 2 : Quel est ton prenom ?"
 print "> "
 name2 = gets.chomp
 
-answers = ["X","O"]
+answers=["X","O"]
 answers.delete(sign1)
+sign2 = answers[0]
 
 sign2 = answers[0]
 # puts sign2
+
 
 puts "#{name2}, ton signe est : #{sign2} "
 
@@ -51,7 +54,7 @@ system 'clear'
 board = Board.new
 board.show_board
 
-while  board.cases.include? " "
+while  board.hash_cases.values.include? " "
     puts
     puts "#{name1}, lâche une case !"
     board.player_choise(player1)
@@ -63,8 +66,6 @@ while  board.cases.include? " "
     system 'clear'
     board.show_board
 end
-
-
 
 #binding.pry
 
