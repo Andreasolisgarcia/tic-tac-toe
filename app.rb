@@ -3,7 +3,7 @@ require 'bundler'
 #require 'pry'
 
 
-require_relative 'lib/Game.rb'
+require_relative 'lib/Game'
 require_relative 'lib/Player'
 require_relative 'lib/Board'
 
@@ -18,17 +18,23 @@ while sign1 != "O" && sign1 != "X"
     puts 'Malin toi !, cest "X" ou "O"'
     sign1 = gets.chomp
 end
+puts sign1
 
 puts "Joueur 2 : Quel est ton prenom ?"
 name2 = gets.chomp
 
-array =["X","O"].delete(sign1)
-sign2 = array[0]
+answers = ["X","O"]
+answers.delete(sign1)
+
+sign2 = answers[0]
+puts sign2
+
+gets
 
 puts "#{name2} ton sign est: #{sign2} "
 
-player1 = Player.new(name1,name2)
-player2 = Player.new(sign1,sign2)
+player1 = Player.new(name1,sign1)
+player2 = Player.new(name2,sign2)
 
 puts "Board to be alive !"
 
