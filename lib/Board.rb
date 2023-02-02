@@ -29,11 +29,11 @@ class Board
 
     def show_board
         puts "   1   2   3"
-        puts "a  #{@cases[0]} | #{@cases[1]} | #{@cases[2]}"
+        puts "a  #{@hash_cases["a1"]} | #{@hash_cases["a2"]} | #{@hash_cases["a3"]}"
         puts "  ---+---+---"
-        puts "b  #{@cases[3]} | #{@cases[4]} | #{@cases[5]}"
+        puts "b  #{@hash_cases["b1"]} | #{@hash_cases["b2"]} | #{@hash_cases["b3"]}"
         puts "  ---+---+---"
-        puts "c  #{@cases[6]} | #{@cases[7]} | #{@cases[8]}"
+        puts "c  #{@hash_cases["c1"]} | #{@hash_cases["c2"]} | #{@hash_cases["c3"]}"
     end
 
     def player_choise(player)
@@ -45,11 +45,11 @@ class Board
         end 
     end
 
-    def who_wins?
-        ["a1", "b2", "c3"]
-        ["1", "b2", "c3"]
-        if  
-    end
+    # def who_wins?
+    #     ["a1", "b2", "c3"]
+    #     ["1", "b2", "c3"]
+    #     if  
+    # end
 end
 
 

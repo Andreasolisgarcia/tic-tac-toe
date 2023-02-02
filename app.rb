@@ -54,7 +54,7 @@ system 'clear'
 board = Board.new
 board.show_board
 
-while  board.hash_cases.values.include? " "
+while board.hash_cases.values.include? " "
     puts
     puts "#{name1}, lâche une case !"
     board.player_choise(player1)
