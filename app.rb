@@ -1,6 +1,6 @@
 require 'bundler'
 #Bundler.require
-#require 'pry'
+require 'pry'
 
 
 require_relative 'lib/Game.rb'
@@ -12,23 +12,25 @@ puts "Joueur 1 : Quel est ton prenom ?"
 name1 = gets.chomp
 
 puts 'Choisis "X" ou "O"'
-sign1 = gets.chomp
+sign1 = gets.chomp.capitalize
                                       
 while sign1 != "O" && sign1 != "X"
     puts 'Malin toi !, cest "X" ou "O"'
-    sign1 = gets.chomp
+    sign1 = gets.chomp.capitalize
 end
 
 puts "Joueur 2 : Quel est ton prenom ?"
 name2 = gets.chomp
 
-array =["X","O"].delete(sign1)
-sign2 = array[0]
+answers=["X","O"]
+answers.delete(sign1)
+sign2 = answers[0]
+
 
 puts "#{name2} ton sign est: #{sign2} "
 
-player1 = Player.new(name1,name2)
-player2 = Player.new(sign1,sign2)
+player1 = Player.new(name1,sign1)
+player2 = Player.new(name2,sign2)
 
 puts "Board to be alive !"
 
@@ -43,8 +45,7 @@ while  board.cases.include? " "
 end
 
 
-
-#binding.pry
+binding.pry
 
 
 
