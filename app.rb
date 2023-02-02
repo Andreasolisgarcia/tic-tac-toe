@@ -3,7 +3,7 @@ require 'bundler'
 #require 'pry'
 
 
-require_relative 'lib/Game.rb'
+require_relative 'lib/Game'
 require_relative 'lib/Player'
 require_relative 'lib/Board'
 
