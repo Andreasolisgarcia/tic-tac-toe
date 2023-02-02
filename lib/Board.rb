@@ -45,11 +45,15 @@ class Board
         end 
     end
 
-    # def who_wins?
-    #     ["a1", "b2", "c3"]
-    #     ["1", "b2", "c3"]
-    #     if  
-    # end
+
+    def player_wins?(player)
+        win_cases =[[@hash_cases["a1"], @hash_cases["b2"], @hash_cases["c3"]],[@hash_cases["c1"], @hash_cases["b2"], @hash_cases["a3"],[@hash_cases["a1"],@hash_cases["a2"]}     |     #{@hash_cases["a3"],["b1", "b2", "b3"],["c1", "c2", "c3"]]
+        for win_cases.each do |win_case|
+        end
+   
+    end
+
+
 end
 
 
