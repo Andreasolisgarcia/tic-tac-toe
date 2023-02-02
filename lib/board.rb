@@ -14,15 +14,16 @@ class Board
         @c3 = " "
         
         @cases = [@a1, @a2, @a3, @b1, @b2, @b3, @c1, @c2, @c3]
-      end
+    end
 
     def show_board
         puts "       1           2          3"
         puts "A      #{@cases[0]}     |    #{@cases[1]}     |     #{@cases[2]}"
-        puts "   ______________________________"
+        puts "    ______________________________"
         puts "B      #{@cases[3]}     |    #{@cases[4]}     |     #{@cases[5]}"
-        puts "   ______________________________"
+        puts "    ______________________________"
         puts "C      #{@cases[6]}     |    #{@cases[7]}     |     #{@cases[8]}"
+        puts "    ______________________________"
     end
 
     def player_choise(player)
@@ -48,8 +49,8 @@ class Board
                 @cases[7] = player.sign
             when "c3"
                 @cases[8]= player.sign
-            end
         end
+    end
 
 
 end

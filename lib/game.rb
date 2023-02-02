@@ -1,7 +1,7 @@
-require_relative 'player.rb'
+require_relative 'player'
 class Game
 
-    def initialize
+    def initialize(name, sign, player)
         puts "Joueur 1 : Quel est ton prenom ?"
         name1 = gets.chomp
 
@@ -13,9 +13,9 @@ class Game
 
         puts 'Choisis "X" ou "O"'
         sign2 = gets.chomp
+    
+        player1 = Player.new(name1,sign1)
+        player2 = Player.new(name2,sign2)
+    end
 
-        player1 = Player.new(name1,name2)
-        player2 = Player.new(sign1,sign2)
-    end 
-
-end 
+end
