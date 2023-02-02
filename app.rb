@@ -1,6 +1,4 @@
 require 'bundler'
-
-#Bundler.require
 require 'pry'
 
 require_relative 'lib/Game'
@@ -21,7 +19,7 @@ while sign1 != "O" && sign1 != "X"
     puts 'Malin toi !, cest "X" ou "O"'
     sign1 = gets.chomp.capitalize
 end
-# puts sign1
+
 
 puts
 puts "Joueur 2 : Quel est ton prenom ?"
@@ -31,10 +29,6 @@ name2 = gets.chomp
 answers=["X","O"]
 answers.delete(sign1)
 sign2 = answers[0]
-
-sign2 = answers[0]
-# puts sign2
-
 
 puts "#{name2}, ton signe est : #{sign2} "
 
@@ -46,28 +40,42 @@ puts "[PRESS ENTER]"
 gets
 system 'clear'
 puts "Board to be alive !"
-puts
-puts "[PRESS ENTER]"
-gets
-system 'clear'
 
 board = Board.new
 board.show_board
 
+
 while board.hash_cases.values.include? " "
-    puts
-    puts "#{name1}, lâche une case !"
-    board.player_choise(player1)
-    system 'clear'
-    board.show_board
-    puts
-    puts "#{name2}, lâche une case !"
-    board.player_choise(player2) 
-    system 'clear'
-    board.show_board
+    if  player1.status == "Player"
+        puts "#{player1.name}, lâche une case !"
+        board.player_choise(player1)
+        system 'clear'
+        board.show_board
+        board.player_wins?(player1)
+    else
+        break
+    end 
+    if  player1.status == "Player"
+        puts "#{player2.name}, lâche une case !"
+        board.player_choise(player2) 
+        system 'clear'
+        board.show_board
+        board.player_wins?(player2)
+    else
+        break
+    end 
 end
 
-#binding.pry
+puts "Tu veux Tenter une nouvelle fois Y/N?"
+again = gets.chomp
+while again != "Y" && again != "N"
+    puts 'Pardon?'
+    again = gets.chomp.capitalize
+end
+
+
+
+
 
 
 
