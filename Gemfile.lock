@@ -8,6 +8,8 @@ GEM
     diff-lcs (1.5.0)
     jaro_winkler (1.5.4)
     method_source (1.0.0)
+    nokogiri (1.14.1-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.1-x86_64-linux)
       racc (~> 1.4)
     open-uri (0.3.0)
@@ -52,9 +54,11 @@ GEM
     uri (0.12.0)
 
 PLATFORMS
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
+  bundler (~> 2.4.5)
   colorize
   nokogiri
   open-uri

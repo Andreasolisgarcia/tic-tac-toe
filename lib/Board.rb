@@ -28,7 +28,7 @@ class Board
 
     def player_choise(player)
         puts
-        puts "C'est à toi de jouer, pense vite ! : "
+        puts "C'est à toi de jouer, pense vite ! : ".colorize(:color => :green, :mode => :bold)
         choise_player = gets.chomp
         if  @hash_cases[choise_player] == " "
         @hash_cases[choise_player] = player.sign
@@ -45,7 +45,3 @@ class Board
         end
     end
 end
-
-
-
-

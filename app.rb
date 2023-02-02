@@ -1,19 +1,19 @@
 require 'bundler'
-require 'pry'
+Bundler.require
 
 require_relative 'lib/Game'
 require_relative 'lib/Player'
 require_relative 'lib/Board'
 
-puts "████████╗██╗░█████╗░  ████████╗░█████╗░░█████╗░  ████████╗░█████╗░███████╗"
-puts "╚══██╔══╝██║██╔══██╗  ╚══██╔══╝██╔══██╗██╔══██╗  ╚══██╔══╝██╔══██╗██╔════╝"
-puts "░░░██║░░░██║██║░░╚═╝  ░░░██║░░░███████║██║░░╚═╝  ░░░██║░░░██║░░██║█████╗░░"
-puts "░░░██║░░░██║██║░░██╗  ░░░██║░░░██╔══██║██║░░██╗  ░░░██║░░░██║░░██║██╔══╝░░"
-puts "░░░██║░░░██║╚█████╔╝  ░░░██║░░░██║░░██║╚█████╔╝  ░░░██║░░░╚█████╔╝███████╗"
-puts "░░░╚═╝░░░╚═╝░╚════╝░  ░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░  ░░░╚═╝░░░░╚════╝░╚══════╝"
+puts "████████╗██╗░█████╗░  ████████╗░█████╗░░█████╗░  ████████╗░█████╗░███████╗".light_blue
+puts "╚══██╔══╝██║██╔══██╗  ╚══██╔══╝██╔══██╗██╔══██╗  ╚══██╔══╝██╔══██╗██╔════╝".light_blue
+puts "░░░██║░░░██║██║░░╚═╝  ░░░██║░░░███████║██║░░╚═╝  ░░░██║░░░██║░░██║█████╗░░".light_blue
+puts "░░░██║░░░██║██║░░██╗  ░░░██║░░░██╔══██║██║░░██╗  ░░░██║░░░██║░░██║██╔══╝░░".light_blue
+puts "░░░██║░░░██║╚█████╔╝  ░░░██║░░░██║░░██║╚█████╔╝  ░░░██║░░░╚█████╔╝███████╗".light_blue
+puts "░░░╚═╝░░░╚═╝░╚════╝░  ░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░  ░░░╚═╝░░░░╚════╝░╚══════╝".light_blue
 puts
-puts "█▀█ █░█ █▄▄ █▄█"
-puts "█▀▄ █▄█ █▄█ ░█░"
+puts "█▀█ █░█ █▄▄ █▄█".red
+puts "█▀▄ █▄█ █▄█ ░█░".red
 puts
 
 gets
@@ -21,11 +21,11 @@ system 'clear'
 
 
 
-puts "Joueur 1 : Quel est ton prenom Human?"
+puts "Joueur 1 : Quel est ton prenom Human?".colorize(:color => :green, :mode => :bold)
 print "* "
 name1 = gets.chomp
 puts
-puts 'Choisis "X" ou "O"'
+puts 'Choisis "X" ou "O"'.colorize(:color => :green, :mode => :bold)
 print "* "
 sign1 = gets.chomp.capitalize                                    
 while sign1 != "O" && sign1 != "X"
@@ -34,21 +34,21 @@ while sign1 != "O" && sign1 != "X"
 end
 system 'clear'
 
-puts "Joueur 2 : Quel est ton prenom Human V2.0?"
+puts "Joueur 2 : Quel est ton prenom Human V2.0?".colorize(:color => :green, :mode => :bold)
 print "* "
 name2 = gets.chomp
 answers=["X","O"]
 answers.delete(sign1)
 sign2 = answers[0]
 puts
-puts "#{name2}, ton signe est : #{sign2} "
+puts "#{name2}, ton signe est : #{sign2} ".colorize(:color => :green, :mode => :bold)
 
 game = Game.new
 player1 = Player.new(name1,sign1)
 player2 = Player.new(name2,sign2)
 
 puts
-puts "....it's about to rooooll"
+puts "....it's about to rooooll".colorize(:color => :green, :mode => :bold)
 gets
 system 'clear'
 puts "Board to be alive ! tu connais les règles ;)"
@@ -56,11 +56,11 @@ puts
 board = Board.new
 board.show_board
 
-while game.again == "Y"
+
     while board.hash_cases.values.include? " "
         if  player1.status == "Player"
             puts
-            puts "#{player1.name}, lâche une case !"
+            puts "#{player1.name}, lâche une case !".colorize(:color => :blue, :mode => :bold)
             board.player_choise(player1)
             system 'clear'
             board.show_board
@@ -70,7 +70,7 @@ while game.again == "Y"
         end 
         if  player1.status == "Player"
             puts
-            puts "#{player2.name}, lâche une case !"
+            puts "#{player2.name}, lâche une case !".colorize(:color => :yellow, :mode => :bold)
             board.player_choise(player2) 
             system 'clear'
             board.show_board
@@ -80,11 +80,4 @@ while game.again == "Y"
         end 
     end
 
-    puts "Tu veux Tenter une nouvelle fois Y/N?"
-    game.again = gets.chomp
-        while game.again != "Y" && game.again != "N"
-            puts 'Pardon?'
-            game.again = gets.chomp.capitalize
-        end
-end
    
