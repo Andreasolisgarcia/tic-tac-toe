@@ -1,4 +1,3 @@
-#require 'pry'
 require_relative 'Player'
 
 class Board
@@ -28,6 +27,7 @@ class Board
     end
 
     def player_choise(player)
+        puts
         puts "C'est à toi de jouer, pense vite ! : "
         choise_player = gets.chomp
         if  @hash_cases[choise_player] == " "
