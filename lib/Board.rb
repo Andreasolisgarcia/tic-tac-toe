@@ -1,4 +1,6 @@
 #require 'pry'
+require_relative 'Player'
+
 class Board
     attr_accessor :a1, :a2, :a3, :b1, :b2, :b3,:c1, :c2, :c3, :cases
     
@@ -16,17 +18,26 @@ class Board
         @cases = [@a1, @a2, @a3, @b1, @b2, @b3, @c1, @c2, @c3]
       end
 
+    # def show_board
+    #     puts "       1           2          3"
+    #     puts "A      #{@cases[0]}     |    #{@cases[1]}     |     #{@cases[2]}"
+    #     puts "   ______________________________"
+    #     puts "B      #{@cases[3]}     |    #{@cases[4]}     |     #{@cases[5]}"
+    #     puts "   ______________________________"
+    #     puts "C      #{@cases[6]}     |    #{@cases[7]}     |     #{@cases[8]}"
+    # end
+
     def show_board
-        puts "       1           2          3"
-        puts "A      #{@cases[0]}     |    #{@cases[1]}     |     #{@cases[2]}"
-        puts "   ______________________________"
-        puts "B      #{@cases[3]}     |    #{@cases[4]}     |     #{@cases[5]}"
-        puts "   ______________________________"
-        puts "C      #{@cases[6]}     |    #{@cases[7]}     |     #{@cases[8]}"
+        puts "   1   2   3"
+        puts "a  #{@cases[0]} | #{@cases[1]} | #{@cases[2]}"
+        puts "  ---+---+---"
+        puts "b  #{@cases[3]} | #{@cases[4]} | #{@cases[5]}"
+        puts "  ---+---+---"
+        puts "c  #{@cases[6]} | #{@cases[7]} | #{@cases[8]}"
     end
 
     def player_choise(player)
-        puts 'Lache une caise'
+        # puts "Lâche une case"
         choise_player = gets.chomp
 
         case choise_player
